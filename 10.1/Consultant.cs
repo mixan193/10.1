@@ -31,10 +31,11 @@ namespace _10._1
                         ChooseAMethodToFind();
                         break;
                     case ConsoleKey.D2:
-                        Console.WriteLine("Вы консультант!");
+                        Console.WriteLine(GetAllClientsInStrings(ClientsDB.clients.ToArray()));
                         break;
                     default:
                         Console.WriteLine("Вы ничего не выбрали");
+                        Console.ReadKey();
                         break;
                 }
             }
@@ -136,6 +137,20 @@ namespace _10._1
                 client.phoneNumber = Client.PhoneNumberUniformization(Console.ReadLine());
                 return true;
             }
+        }
+
+        public string GetAllClientsInStrings(Client[] clients)
+        {
+            string result = string.Empty;
+            foreach (Client client in clients)
+            {
+                result += GetClientInString(client);
+            }
+            if(result == string.Empty)
+            {
+                result += "Клиентов нет";
+            }
+            return result;
         }
     }
 }

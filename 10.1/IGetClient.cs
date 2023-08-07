@@ -9,5 +9,6 @@ namespace _10._1
     internal interface IGetClient
     {
         string GetClientInString(Client client);
+        string GetAllClientsInStrings(Client[] clients);
     }
 }

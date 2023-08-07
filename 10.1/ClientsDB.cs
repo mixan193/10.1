@@ -55,6 +55,11 @@ namespace _10._1
             }
             return null;
         }
+        /// <summary>
+        /// Возвращает экземпляр класса Client по номеру ИД
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
         public static Client GetClient(int id)
         {
             foreach (Client client in clients)
@@ -66,6 +71,5 @@ namespace _10._1
             }
             return null;
         }
-
     }
 }
